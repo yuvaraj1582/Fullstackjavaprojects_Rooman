@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Declaration Example with Button</title>
+</head>
+<body>
+    <h1>Various input tags:</h1>
+    <h3>1.button tag</h3>
+    <input type="button" value="Click Me" onclick="alert('Hello, World!')">
+    <h3>2.check box</h3>
+    <input type="checkbox" id="apple" name="fruit" value="apple">
+    <label for="apple">Apple</label><br>
+
+    <input type="checkbox" id="banana" name="fruit" value="banana">
+    <label for="banana">Banana</label><br>
+
+    <input type="checkbox" id="cherry" name="fruit" value="cherry">
+    <label for="cherry">Cherry</label><br>
+    <h3>3.color</h3>
+    <label for="color">Select a color:</label>
+    <input type="color" id="color" name="color" value="#ff0000">
+
+    <p>Selected color: <span id="colorValue">#ff0000</span></p>
+
+    <script>
+        // Get the color input element
+        const colorInput = document.getElementById('color');
+        const colorValue = document.getElementById('colorValue');
+
+        // Listen for changes to the color input
+        colorInput.addEventListener('input', function() {
+            colorValue.textContent = colorInput.value;
+        });
+    </script>
+    <h3>4.date</h3>
+    <label for="birthday">Enter your birthday:</label>
+    <input type="date" id="birthday" name="birthday">
+
+    <p>Selected Date: <span id="selectedDate"></span></p>
+
+    <script>
+        // Get the date input element and the span for displaying the selected date
+        const dateInput = document.getElementById('birthday');
+        const selectedDateDisplay = document.getElementById('selectedDate');
+
+        // Listen for changes to the date input
+        dateInput.addEventListener('input', function() {
+            selectedDateDisplay.textContent = dateInput.value;
+        });
+    </script>
+    <h3>5.date and time</h3>
+    <label for="datetime">Enter a date and time:</label>
+    <input type="datetime-local" id="datetime" name="datetime">
+
+    <p>Selected Date and Time: <span id="selectedDateTime"></span></p>
+
+    <script>
+        // Get the datetime input element and the span for displaying the selected date and time
+        const datetimeInput = document.getElementById('datetime');
+        const selectedDateTimeDisplay = document.getElementById('selectedDateTime');
+
+        // Listen for changes to the datetime input
+        datetimeInput.addEventListener('input', function() {
+            selectedDateTimeDisplay.textContent = datetimeInput.value;
+        });
+    </script>
+    <h3>6.File</h3>
+    <h6>Upload a File</h6>
+
+    <label for="file">Choose a file:</label>
+    <input type="file" id="file" name="file">
+
+    <p id="fileName"></p>
+
+    <script>
+        const fileInput = document.getElementById('file');
+        const fileNameDisplay = document.getElementById('fileName');
+
+        // Listen for when a file is selected
+        fileInput.addEventListener('change', function() {
+            // Display the name of the selected file
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = 'Selected file: ' + fileInput.files[0].name;
+            } else {
+                fileNameDisplay.textContent = 'No file selected.';
+            }
+        });
+    </script>
+    <h3>7.Image</h3>
+    <h1>Submit Form Using Image</h1>
+
+    <form action="submit_form.php" method="POST">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <input type="image" src="D:\HTML\download.jpeg" alt="Submit Button" width="100" height="50">
+        <h3>8.Radio Button</h3>
+        <form action="#">
+            <input type="radio" id="apple" name="fruit" value="apple">
+            <label for="apple">Apple</label><br>
+    
+            <input type="radio" id="banana" name="fruit" value="banana">
+            <label for="banana">Banana</label><br>
+    
+            <input type="radio" id="cherry" name="fruit" value="cherry">
+            <label for="cherry">Cherry</label><br>
+        </form>
+        <h3>9.Volume</h3>
+        <label for="volume">Volume:</label>
+    <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+
+    <p>Volume: <span id="volumeValue">50</span></p>
+
+    <script>
+        const volumeSlider = document.getElementById('volume');
+        const volumeValue = document.getElementById('volumeValue');
+
+        // Update the displayed value when the slider is adjusted
+        volumeSlider.addEventListener('input', function() {
+            volumeValue.textContent = volumeSlider.value;
+        });
+    </script>
+    <h3>10.Search</h3>
+    <label for="search">Enter your search term:</label>
+    <input type="search" id="search" name="search" placeholder="Search..." />
+
+    <button type="submit">Search</button>
+
+
+</body>
+</html>
